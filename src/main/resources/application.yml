@@ -27,3 +27,9 @@ spring:
 logging:
   level:
     me.springStudy: DEBUG
+
+jwt:
+  header: Authorization
+  secret: c29uZ2plb25nLXNwcmluZy1ib290LXNlY3VyaXR5LWp3dA==
+  #base64로 인코딩한 것 (songjeong-spirng-boot-security-jwt)
+  token-validity-in-seconds: 86400
