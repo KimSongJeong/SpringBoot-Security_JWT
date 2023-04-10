@@ -1,20 +1,37 @@
 package me.springStudy.jwt.config;
 
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+/*
+ * EnableWebSecurity : 기본적인 Web 보안을 활성화하겠다
+ * 추가적인 설정 (아래 중 하나)
+ *      - WebSecurityConfigurer implements
+ *      - WebSecurityConfigurerAdapter extends
+ * 이후 버전의 Spring Boot 에서는 WebSecurityConfigurerAdapter 를 사용할 수 없음
+ * Bean 등록해서 사용해야 함
+ */
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    /**
-     * EnableWebSecurity : 기본적인 Web 보안을 활성화하겠다
-     * 추가적인 설정 (아래 중 하나)
-     *      - WebSecurityConfigurer implements
-     *      - WebSecurityConfigurerAdapter extends
-     * 이후 버전의 Spring Boot에서는 WebSecurityConfigurerAdapter를 사용할 수 없음
-     * Bean 등록해서 사용해야 함
+    /*
+     * h2 Console, 파비콘은 Security 수행하지 않고 접근할 수 있도록 설정
+     *
+     *
+     * h2 Console URL : http://localhost:{port}/h2-console
+     * JDBC URL application.yml 쪽과 일치하는지 확인
      */
+    @Override
+    public void configure(WebSecurity web) {
+        web
+                .ignoring()
+                .antMatchers(
+                        "/h2-console/**"
+                        ,"/favicon.ico"
+                );
+    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
