@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * 필요한 권한이 존재하지 않는 경우에 403 Forbideen 에러를 리턴해줄 클래스
+ * 필요한 권한이 존재하지 않는 경우 403 SC_FORBIDDEN 에러 리턴
  */
 @Component
 public class JwtAccessDeniedHandler implements AccessDeniedHandler {

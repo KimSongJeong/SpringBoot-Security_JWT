@@ -22,7 +22,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  * 이후 버전의 Spring Boot 에서는 WebSecurityConfigurerAdapter 를 사용할 수 없음
  * Bean 등록해서 사용해야 함
  *
- * EnableGlobalMethodSecurity : PreAuthorize 어노테이션을 메소드 단위로 추가하기 위함함 */
+ * EnableGlobalMethodSecurity : PreAuthorize 어노테이션을 메소드 단위로 추가하기 위함 */
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
