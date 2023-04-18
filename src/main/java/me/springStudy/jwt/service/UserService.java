@@ -1,7 +1,6 @@
 package me.springStudy.jwt.service;
 
 import java.util.Collections;
-import java.util.Optional;
 import me.springStudy.jwt.dto.UserDto;
 import me.springStudy.jwt.entity.Authority;
 import me.springStudy.jwt.entity.User;

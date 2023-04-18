@@ -1,13 +1,11 @@
 package me.springStudy.jwt.controller;
 
 import me.springStudy.jwt.dto.UserDto;
-import me.springStudy.jwt.entity.User;
 import me.springStudy.jwt.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.io.IOException;
