@@ -1,7 +1,6 @@
 package me.springStudy.jwt.utils;
 
 import lombok.extern.slf4j.Slf4j;
-import me.springStudy.jwt.entity.User;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
